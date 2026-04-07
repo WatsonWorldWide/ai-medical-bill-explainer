@@ -5,6 +5,9 @@ const errorEl = document.getElementById('error');
 const resultSectionEl = document.getElementById('result-section');
 const explanationEl = document.getElementById('explanation');
 
+/** Same host as the page (local Express or Vercel); avoids broken relative URLs in odd deploy setups. */
+const EXPLAIN_API_URL = new URL('/api/explain', window.location.origin).href;
+
 function setLoading(loading) {
   btnEl.disabled = loading;
   billEl.disabled = loading;
@@ -45,7 +48,7 @@ btnEl.addEventListener('click', async () => {
 
   setLoading(true);
   try {
-    const res = await fetch('/api/explain', {
+    const res = await fetch(EXPLAIN_API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ billText }),

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "echo skip",
+  "outputDirectory": "public",
+  "installCommand": "npm install",
+  "framework": null,
+  "functions": {
+    "api/explain.js": {
+      "maxDuration": 60
+    }
+  }
+}
