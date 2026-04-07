@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Medical Bill Explainer</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <h1>AI Medical Bill Explainer</h1>
+        <p class="lede">
+          Paste the text from a medical bill (or an explanation of benefits). Click
+          the button and we will ask Claude to explain it in plain language.
+        </p>
+      </header>
+
+      <main class="main">
+        <label class="label" for="bill">Bill text</label>
+        <textarea
+          id="bill"
+          class="textarea"
+          placeholder="Paste your bill here…"
+          rows="14"
+        ></textarea>
+
+        <button type="button" class="button" id="explain-btn">
+          Explain My Bill
+        </button>
+
+        <p class="status" id="status" role="status" aria-live="polite" hidden></p>
+
+        <div class="error" id="error" role="alert" hidden></div>
+
+        <section class="result" id="result-section" aria-label="Explanation" hidden>
+          <h2>Explanation</h2>
+          <div class="markdown" id="explanation"></div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>
+          <strong>Disclaimer:</strong> This tool is for general information only. It
+          is not medical advice, legal advice, or a substitute for talking to your
+          doctor, hospital billing office, or insurance plan. Always verify charges
+          and coverage with your providers and insurer.
+        </p>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
