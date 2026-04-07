@@ -25,7 +25,7 @@ It also:
 
 ## Live Demo
 
-> [Link to deployed app — add after Vercel deployment]
+> [https://ai-medical-bill-explainer.vercel.app/]
 
 ---
 
